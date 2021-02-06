@@ -4,30 +4,67 @@ const TOAST_TYPES = {
     SUCCESS : "SUCCESS"
 }
 
+const TIMEOUT_TIME = 4000;
 
-export default class Toast {
+
+export default class ToastContainer {
 
     constructor(){
-        //créer un contenant pour les notifs
-        const container = document.createElement("div");
-        container.className = "toast-container";
+        const toastContainer = document.createElement("div");
+        console.log(toastContainer);
+        toastContainer.className = "toastContainer";
+        document.body.appendChild(toastContainer);
+
+        this.toastContainer = toastContainer;
     }
     
 
 
-    //créer des méthodes pour chacun des types de notifs
-    /*info(text, TOAST_TYPES.INFO){
-
+    infoToast(text){
+        this.manageToast(text, TOAST_TYPES.INFO);
     }
-    error(text, TOAST_TYPES.ERROR){
-
-    }
-
-    success(text, TOAST_TYPES.SUCCESS){
-
+    errorToast(text){
+        this.manageToast(text, TOAST_TYPES.ERROR);
     }
 
-    toast(text, type){
+    successToast(text){
+        this.manageToast(text, TOAST_TYPES.SUCCESS);
+    }
 
-    }*/
+    manageToast(text, type){
+        const toastElement = this.createToast(text, type).element;
+        this.appendToast(toastElement);
+        this.setTimeoutAndRemove(TIMEOUT_TIME, toastElement);
+    }
+
+    createToast(text, type){
+        return new Toast(text, type);
+    }
+
+    appendToast(toastElement){
+        this.toastContainer.appendChild(toastElement);
+    }
+
+    removeToast(toastElement) {
+        toastElement.remove()
+    }
+
+    setTimeoutAndRemove(time, toastElement){
+        window.setTimeout(() => {
+            this.removeToast(toastElement);
+        }, time)
+    }
+}
+
+class Toast {
+    constructor(text, type){
+        const toastElement = document.createElement("div");
+        const toastText = document.createElement("p");
+        this.text, toastElement.textContent = text;
+        toastElement.className = `toastElement ${type.toLowerCase()}`;
+        toastElement.appendChild(toastText);
+
+        this.type = type;
+        this.element = toastElement;
+    }
 }

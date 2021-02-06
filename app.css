@@ -9,10 +9,15 @@ body {
     margin: 0;
 }
 
+  
+
 
 
 /*classes*/
-.mainContainer {
+
+/*controlBoardContainer*/
+.controlBoardContainer {
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -22,10 +27,69 @@ body {
     height: auto;
 }
 
-
-/*id*/
-.toastButton {
+.controlBoardContainer .inputText {
     position: relative;
+    padding: 10px;
+    margin: 4px;
+    height: 5vh;
     width: 20vw;
-    height: auto;
+    text-align: center;
+
+}
+
+
+.controlBoardContainer .toastButton {
+    position: relative;
+    text-align: center;
+    background-size: contain;
+    width: 20vw;
+    margin: 10px;
+    height: 10vh;
+}
+
+.toastButton p {
+    font-size: 1.5em;
+}
+
+
+/*toastContainer*/
+.toastContainer {
+    position: fixed;
+    display: flex;
+    height: fit-content;
+    width: fit-content;
+    flex-direction: column-reverse;
+    bottom: 5px;
+    right:5px
+}
+
+.toastContainer .toastElement {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 20vw;
+    height: 7vh;
+    margin: 3px;
+    left: 0;
+    bottom: 0;
+}
+
+.toastElement p {
+    font-size: large;
+}
+
+
+
+/*shared class*/
+.error {
+    background: rgb(240, 57, 25);
+}
+
+.info {
+    background: yellowgreen;
+}
+
+.success {
+    background: rgb(6, 146, 6);
 }

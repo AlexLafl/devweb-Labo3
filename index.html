@@ -9,20 +9,30 @@
     </head>
     <body>
         <title>Toast maker</title>
-        <div id="mainContainer">
+        <div class="controlBoardContainer">
             <div>
-                <input  autocomplete="off" type="text" placeholder="Enter text here" name="fname">
+                <input class="inputText"  autocomplete="off" type="text" placeholder="Click on a button, modify text&#10; then press enter to modify it" name="fname">
             </div>
             <div>
-                <button class="toastButton" type="button" data-type="ERROR">Erreur</button>
+                <button class="toastButton error"  type="button" data-type="ERROR">
+                    <p class="toastTypeText">Error</p>
+                    <p class="toastTextRef">No text defined</p>
+                </button>
             </div>
             <div>
-                <button class="toastButton" type="button" data-type="SUCCESS">Succès</button>
+                <button class="toastButton success"  type="button" data-type="SUCCESS">
+                    <p class="toastTypeText">Success</p>
+                    <p class="toastTextRef">No text defined</p>
+                </button>
+                
             </div>
             <div>
-                <button class="toastButton" type="button" data-type="INFO">Info</button>
+                <button class="toastButton info"  type="button" data-type="INFO">
+                    <p class="toastTypeText">Info</p>
+                    <p class="toastTextRef">No text defined</p>
+                </button>
             </div>
         </div>
-        <script type="module" src="/app.js"></script>
+        <script type="module" src="app.js"></script>
     </body>
 </html>
