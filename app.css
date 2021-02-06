@@ -1,0 +1,31 @@
+
+
+/*elements*/
+html, body{
+    height: 100%;
+}
+
+body {
+    margin: 0;
+}
+
+
+
+/*classes*/
+.mainContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100vw;
+    height: auto;
+}
+
+
+/*id*/
+.toastButton {
+    position: relative;
+    width: 20vw;
+    height: auto;
+}
