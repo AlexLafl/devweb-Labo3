@@ -1,2 +1,4 @@
 Nom : Alexandre Laflamme
 Matricule : 111 265 474
+
+Pour changer le texte d'un bouton, l'utilisateur doit d'abord en sélectionner un, puis entrer le texte voulu puis peser sur la touche "Enter".
